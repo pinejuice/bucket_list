@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock  %}</title>
+    <!-- CSSの読み込み -->
+    {% block css %}{% endblock  %}
+    <!-- javascriptの読み込み -->
+    {% block javascript %}{% endblock  %}
+</head>
+<body>
+    {% block main_contents %}{% endblock  %}
+</body>
+</html>
