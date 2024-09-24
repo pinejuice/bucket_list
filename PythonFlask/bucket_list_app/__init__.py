@@ -13,5 +13,7 @@ def create_app():
 
 
     # Blueprintの登録
+    # from .views.calc_status_sv import calc_status_sv
+    # app.register_blueprint(calc_status_sv)
 
     return app
