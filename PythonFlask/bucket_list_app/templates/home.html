@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block css %}{% endblock %}
+{% block javascript %}{% endblock %}
+
+{% block main_contents %}
+<section id="btn_area">
+    <ul class="nav">
+        <li class="nav-item"><button class="btn">やりたいことの追加</button></li>
+    </ul>
+</section>
+<section id="list_area">
+    <table id="bucket_list" class="table table-bordered table-hover">
+        <thead>
+            <th>#</th>
+            <th>カテゴリ</th>
+            <th>やりたいこと</th>
+            <th>期日</th>
+            <th>状況</th>
+            <th></th>
+        </thead>
+        <tbody>
+            {% for bucket in bucket_list %}
+            <td>{{bucket['no']}}</td>
+            <td>{{bucket['category']}}</td>
+            <td>{{bucket['bucket_name']}}</td>
+            <td>{{bucket['limit_date']}}</td>
+            <td>{{bucket['status']}}</td>
+            <td>ステータスを変える</td>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}

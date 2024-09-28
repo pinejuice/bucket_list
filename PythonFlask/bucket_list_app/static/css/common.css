@@ -1,0 +1,11 @@
+body {
+    /* 月白色 */
+    background-color: #eaf4fc;
+}
+#breadcrumb_list {
+    padding: 10px;
+}
+
+body main {
+    padding: 0 10px;
+}
