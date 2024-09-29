@@ -1,0 +1,56 @@
+/* ボタン部分のカスタマイズ */
+#btn_area {
+    margin-bottom: 5px;
+}
+
+/* リストのヘッダーのカスタマイズ */
+#bucket_list thead th {
+    background-color: #89c3eb;
+}
+
+/* セルの中央寄せ */
+#bucket_list thead,
+#bucket_list .td_no,
+#bucket_list .td_category,
+#bucket_list .td_limit_date,
+#bucket_list .td_status,
+#bucket_list .td_change_status {
+    text-align: center;
+}
+/* セル幅の指定 */
+/* 番号 */
+#bucket_list .th_no,
+#bucket_list .td_no {
+    width: 80px;
+    min-width: 80px;
+}
+/* カテゴリ */
+#bucket_list .th_category,
+#bucket_list .td_category {
+    width: 200px;
+    min-width: 200px;
+}
+/* やりたいこと */
+#bucket_list .th_bucket_name,
+#bucket_list .td_bucket_name {
+    width: calc(100% - 80px - 200px - 128px - 150px - 80px);
+    min-width: 500px;
+}
+/* 期日 */
+#bucket_list .th_limit_date,
+#bucket_list .td_limit_date {
+    width: 128px;
+    min-width: 128px;
+}
+/* ステータス */
+#bucket_list .th_status,
+#bucket_list .td_status {
+    width: 150px;
+    min-width: 150px;
+}
+/* メニュー */
+#bucket_list .th_change_status,
+#bucket_list .td_change_status {
+    width: 80px;
+    min-width: 80px;
+}

@@ -2,33 +2,49 @@
 
 {% block title %}Home{% endblock %}
 
-{% block css %}{% endblock %}
-{% block javascript %}{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="/static/css/home.css">
+{% endblock %}
+{% block javascript %}
+<script src="static/js/home.js"></script>
+{% endblock %}
 
 {% block main_contents %}
 <section id="btn_area">
     <ul class="nav">
-        <li class="nav-item"><button class="btn">やりたいことの追加</button></li>
+        <li class="nav-item"><button id="add_bucket" class="btn">やりたいことの追加</button></li>
+        <li class="nav-item"><button id="add_category" class="btn">カテゴリの追加</button></li>
+        <li class="nav-item ms-auto">
+            <input class="form-check-input" type="checkbox" value="" id="hidden_done" checked>
+            <label class="form-check-label" for="hidden_done">完了したやりたいことを隠す</label>
+        </li>
     </ul>
 </section>
 <section id="list_area">
     <table id="bucket_list" class="table table-bordered table-hover">
         <thead>
-            <th>#</th>
-            <th>カテゴリ</th>
-            <th>やりたいこと</th>
-            <th>期日</th>
-            <th>状況</th>
-            <th></th>
+            <th class="th_no">#</th>
+            <th class="th_category">カテゴリ</th>
+            <th class="th_bucket_name">やりたいこと</th>
+            <th class="th_limit_date">期日</th>
+            <th class="th_status">状況</th>
+            <th class="th_change_status"></th>
         </thead>
         <tbody>
             {% for bucket in bucket_list %}
-            <td>{{bucket['no']}}</td>
-            <td>{{bucket['category']}}</td>
-            <td>{{bucket['bucket_name']}}</td>
-            <td>{{bucket['limit_date']}}</td>
-            <td>{{bucket['status']}}</td>
-            <td>ステータスを変える</td>
+            <td class="td_no align-middle">{{bucket['no']}}</td>
+            <td class="td_category align-middle">{{bucket['category']}}</td>
+            <td class="td_bucket_name align-middle">{{bucket['bucket_name']}}</td>
+            <td class="td_limit_date align-middle">{{bucket['limit_date']}}</td>
+            <td class="td_status align-middle">{{bucket['status']}}</td>
+            <td class="td_change_status dropdown">
+                <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">・・・</button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">詳細を確認する</a></li>
+                  <li><a class="dropdown-item" href="#">ステータスを変更する</a></li>
+                  <li><a class="dropdown-item" href="#">完了に変更する</a></li>
+                </ul>
+            </td>
             {% endfor %}
         </tbody>
     </table>
